@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nikel - home</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body id="home">
+    <header
+      class="d-flex justify-content-between align-items-center p-3 mb-4 bg-white shadow-sm"
+    >
+      <div class="d-flex align-items-center">
+        <img
+          src="./assets/images/nikel-logo.png"
+          alt="Nikel Logo"
+          style="height: 40px"
+        />
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <i
+          class="bi bi-house-fill icon-menu"
+          id="nav-home"
+          style="cursor: pointer"
+        ></i>
+        <i
+          class="bi bi-currency-exchange icon-menu"
+          id="nav-transactions"
+          style="cursor: pointer"
+        ></i>
+        <i
+          class="bi bi-person-circle icon-menu"
+          id="nav-logout"
+          style="cursor: pointer"
+        ></i>
+      </div>
+    </header>
+    <main class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+          <div class="d-flex align-items-center gap-3 mb-1">
+            <i class="bi bi-cash-coin fs-1 color-purple"></i>
+            <span id="valorTotal" class="fs-2" style="font-weight: 600"></span>
+            <!-- Moedas decorativas no fundo -->
+            <img
+              src="./assets/images/coins.png"
+              alt="Moedas"
+              class="position-relative end-0 top-0 coins-home"
+              style="
+                max-width: 136px;
+                z-index: 0;
+                margin-left: auto;
+                height: 120px;
+              "
+            />
+          </div>
+          <div class="bg-white rounded-top-4 shadow p-4 position-relative">
+            <div class="row">
+              <div
+                class="d-flex align-items-center mb-3 border-bottom border-2 p-3 pt-1"
+              >
+                <div class="col-6 d-flex align-items-center">
+                  <span class="fw-bold fs-5">Entradas</span>
+                  <i class="bi bi-arrow-down-circle icon-table"></i>
+                </div>
+
+                <div class="col-6 d-flex align-items-center">
+                  <span class="fw-bold fs-5">Saídas</span>
+                  <i class="bi bi-arrow-up-circle icon-table"></i>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div id="col-entradas" class="mb-4">
+                  <!-- Entradas dinâmicas via JS -->
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div id="col-saidas" class="mb-4">
+                  <!-- Saídas dinâmicas via JS -->
+                </div>
+              </div>
+            </div>
+            <!-- ...existing code... -->
+            <div class="d-flex justify-content-start align-items-start div-btnVerTodas" >
+              <button
+                class="btn button-default"
+                id="btnVerTodas"
+                style="background-color: rgb(92, 2, 177); color: white"
+              >
+                Ver todas
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Botão flutuante de adicionar -->
+      <button
+        class="btn button-default rounded-circle position-fixed"
+        style="
+          bottom: 32px;
+          right: 126px;
+          width: 56px;
+          height: 56px;
+          z-index: 10;
+          background-color: rgb(92, 2, 177);
+          color: white;
+        "
+        data-bs-toggle="modal"
+        data-bs-target="#modalTransacao"
+      >
+        <i class="fa-solid fa-plus fa-lg"></i>
+      </button>
+
+      <!-- Modais -->
+      <div
+        class="modal fade"
+        id="modalTransacao"
+        tabindex="-1"
+        aria-labelledby="modalTransacaoLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalTransacaoLabel">
+                Adicionar Lançamento
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <form id="formTransacao">
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="valor" class="form-label">Valor</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="valor"
+                    required
+                    min="0"
+                    step="0.01"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="descricao" class="form-label">Descrição</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="descricao"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="data" class="form-label">Data</label>
+                  <input type="date" class="form-control" id="data" required />
+                </div>
+                <div class="mb-3">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="tipo"
+                      id="entrada"
+                      value="Entrada"
+                      checked
+                    />
+                    <label class="form-check-label" for="entrada"
+                      >Entrada</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="tipo"
+                      id="saida"
+                      value="Saída"
+                    />
+                    <label class="form-check-label" for="saida">Saída</label>
+                  </div>
+                </div>
+                <div id="transacaoErro" class="text-danger mb-2"></div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Cancelar
+                </button>
+                <button type="submit" class="btn button-default">
+                  Adicionar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="modal fade"
+        id="modalSucesso"
+        tabindex="-1"
+        aria-labelledby="modalSucessoLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body text-center py-4">
+              <i
+                class="fa fa-check-circle"
+                style="color: #198754; font-size: 2rem"
+              ></i>
+              <span
+                class="d-block mt-2"
+                style="color: #198754; font-weight: 600; font-size: 1.2rem"
+                >Transação adicionada com sucesso!</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./script/base.js"></script>
+    <script src="./script/home.js"></script>
+    <!-- <script src="./script/debug-localstorage.js"></script> -->
+    <script>
+      document.getElementById("nav-home").onclick = function () {
+        window.location.href = "home.html";
+      };
+      document.getElementById("nav-transactions").onclick = function () {
+        window.location.href = "transactions.html";
+      };
+      document.getElementById("nav-logout").onclick = function () {
+        clearSession();
+        window.location.href = "index.html";
+      };
+      document.getElementById("btnVerTodas").onclick = function () {
+        window.location.href = "transactions.html";
+      };
+    </script>
+  </body>
+</html>

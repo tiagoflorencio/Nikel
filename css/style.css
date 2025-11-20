@@ -1,0 +1,174 @@
+.table thead th {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 2;
+}
+/* Background tela home: azul e branco dividido */
+#home {
+  background: linear-gradient(120deg, #ffffff 44.9%, #4c79d3 45%) no-repeat
+    fixed;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.div-btnVerTodas {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.5rem;
+}
+.icon-menu {
+  color: #4e0070 !important;
+  cursor: pointer;
+  transition: color 0.2s;
+  font-size: 25px !important;
+}
+.icon-menu:hover {
+  color: #4482ff !important;
+}
+
+.icon-table {
+  font-size: 30px;
+  margin-inline: 10px;
+  /* color: #4e0070 !important; */
+}
+.color-purple {
+  color: #4e0070 !important;
+}
+#icon-total {
+  color: #4e0070 !important;
+}
+#login {
+  background: linear-gradient(120deg, #4c79d3 44.9%, #ffffff 45%) no-repeat
+    fixed;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.text-login {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.coins-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.coins-container img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+}
+
+#div-img {
+  display: flex;
+  justify-content: end;
+  position: relative;
+  bottom: 0;
+  right: 0;
+  text-align: right;
+}
+.button-default {
+  background-color: #4e0070;
+  color: #ffffff;
+  border: none;
+}
+.button-default:hover {
+  background: #4c79d3 !important;
+  color: #ffffff;
+}
+
+.button-login {
+  border-radius: 10px;
+  background-color: #4e0070;
+  color: #ffffff;
+  width: 326px;
+  margin: 0 auto;
+  border: none;
+  font-weight: 500;
+}
+
+.button-login:hover {
+  background: #4c79d3;
+  color: #ffffff;
+}
+
+.link-default {
+  color: #4e0070;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.link-default:hover {
+  color: #4c79d3;
+}
+
+.form-text {
+  color: #6c757d;
+  font-size: 14px;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+  #login {
+    background: #4c79d3;
+  }
+
+  .text-login {
+    font-size: 16px;
+  }
+
+  .coins-container {
+    margin-top: 2rem;
+  }
+
+  .coins-container img {
+    max-width: 300px;
+    display: none;
+  }
+
+  .coins-img {
+    display: none !important;
+  }
+  .pocket-img {
+    height: 200px;
+    align-items: center;
+  }
+
+  #div-img {
+    position: relative;
+    text-align: center;
+    padding: 1rem 0;
+    justify-content: center;
+  }
+
+  #div-img img {
+    max-width: 250px;
+  }
+
+  .container.text-white.fs-4 {
+    text-align: center;
+    padding: 1rem 0;
+  }
+}
+
+.bg-white.rounded-top-4.shadow.p-4.position-relative {
+  height: 500px;
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
