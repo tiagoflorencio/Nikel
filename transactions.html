@@ -1,134 +1,3 @@
-<!-- Modal de sucesso exclusão -->
-<div
-  class="modal fade"
-  id="modalSucessoExclusao"
-  tabindex="-1"
-  aria-labelledby="modalSucessoExclusaoLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-body text-center py-4">
-        <i
-          class="fa fa-check-circle"
-          style="color: #198754; font-size: 2rem"
-        ></i>
-        <span
-          class="d-block mt-2"
-          style="color: #198754; font-weight: 600; font-size: 1.2rem"
-          >Transação excluída com sucesso!</span
-        >
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Modal de sucesso edição -->
-<div
-  class="modal fade"
-  id="modalSucessoEdicao"
-  tabindex="-1"
-  aria-labelledby="modalSucessoEdicaoLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-body text-center py-4">
-        <i
-          class="fa fa-check-circle"
-          style="color: #198754; font-size: 2rem"
-        ></i>
-        <span
-          class="d-block mt-2"
-          style="color: #198754; font-weight: 600; font-size: 1.2rem"
-          >Transação editada com sucesso!</span
-        >
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Modal Editar Excluir Transação -->
-<div
-  class="modal fade"
-  id="modalEditarTransacao"
-  tabindex="-1"
-  aria-labelledby="modalEditarTransacaoLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalEditarTransacaoLabel">
-          Editar Lançamento
-        </h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-      <form id="formEditarTransacao">
-        <div class="modal-body">
-          <div class="mb-3">
-            <label for="editarValor" class="form-label">Valor</label>
-            <input
-              type="text"
-              class="form-control"
-              id="editarValor"
-              required
-              min="0"
-              step="0.01"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="editarDescricao" class="form-label">Descrição</label>
-            <input
-              type="text"
-              class="form-control"
-              id="editarDescricao"
-              required
-            />
-          </div>
-          <div class="mb-3">
-            <label for="editarData" class="form-label">Data</label>
-            <input type="date" class="form-control" id="editarData" required />
-          </div>
-          <div class="mb-3">
-            <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="editarTipo"
-                id="editarEntrada"
-                value="Entrada"
-              />
-              <label class="form-check-label" for="editarEntrada"
-                >Entrada</label
-              >
-            </div>
-            <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="editarTipo"
-                id="editarSaida"
-                value="Saída"
-              />
-              <label class="form-check-label" for="editarSaida">Saída</label>
-            </div>
-          </div>
-          <div id="editarTransacaoErro" class="text-danger mb-2"></div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" id="btnExcluirTransacao">
-            Excluir
-          </button>
-          <button type="submit" class="btn button-default">Salvar</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -235,6 +104,130 @@
       >
         <i class="fa-solid fa-plus fa-lg"></i>
       </button>
+
+      <!----------------------------------------- Modais -------------------------->
+
+      <!-- Modal de sucesso exclusão -->
+      <div
+        class="modal fade"
+        id="modalSucessoExclusao"
+        tabindex="-1"
+        aria-labelledby="modalSucessoExclusaoLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body text-center py-4">
+              <i
+                class="fa fa-check-circle"
+                style="color: #198754; font-size: 2rem"
+              ></i>
+              <span
+                class="d-block mt-2"
+                style="color: #198754; font-weight: 600; font-size: 1.2rem"
+                >Transação excluída com sucesso!</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Editar Transação -->
+      <div
+        class="modal fade"
+        id="modalEditarTransacao"
+        tabindex="-1"
+        aria-labelledby="modalEditarTransacaoLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalEditarTransacaoLabel">
+                Editar Lançamento
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <form id="formEditarTransacao">
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="editarValor" class="form-label">Valor</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="editarValor"
+                    required
+                    min="0"
+                    step="0.01"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="editarDescricao" class="form-label"
+                    >Descrição</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="editarDescricao"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="editarData" class="form-label">Data</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="editarData"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="editarTipo"
+                      id="editarEntrada"
+                      value="Entrada"
+                    />
+                    <label class="form-check-label" for="editarEntrada"
+                      >Entrada</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="editarTipo"
+                      id="editarSaida"
+                      value="Saída"
+                    />
+                    <label class="form-check-label" for="editarSaida"
+                      >Saída</label
+                    >
+                  </div>
+                </div>
+                <div id="editarTransacaoErro" class="text-danger mb-2"></div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  id="btnExcluirTransacao"
+                >
+                  Excluir
+                </button>
+                <button type="submit" class="btn button-default">Salvar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
 
       <!-- Modal Adicionar Transação -->
       <div
@@ -346,6 +339,30 @@
                 class="d-block mt-2"
                 style="color: #198754; font-weight: 600; font-size: 1.2rem"
                 >Transação adicionada com sucesso!</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal de sucesso edição -->
+      <div
+        class="modal fade"
+        id="modalSucessoEdicao"
+        tabindex="-1"
+        aria-labelledby="modalSucessoEdicaoLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body text-center py-4">
+              <i
+                class="fa fa-check-circle"
+                style="color: #198754; font-size: 2rem"
+              ></i>
+              <span
+                class="d-block mt-2"
+                style="color: #198754; font-weight: 600; font-size: 1.2rem"
+                >Transação editada com sucesso!</span
               >
             </div>
           </div>
